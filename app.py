@@ -25,10 +25,18 @@ venue_mapping = {venue: idx for idx, venue in enumerate(venue_names)}
 
 @app.route('/')
 def index():
-    return render_template("index3.html",
+    return render_template("index5.html",
                            teams=team_mapping,
                            cities=city_mapping,
                            venues=venue_mapping)
+@app.route('/predict-form')
+def predict_form():
+    return render_template("index3.html", 
+                           teams=team_mapping,
+                           cities=city_mapping,
+                           venues=venue_mapping)
+
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
